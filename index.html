@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EP - Portfolio</title>
+<title>Edna Palade - Portfolio</title>
 <meta name="description" content="Edna Palade, Communication Studies student at HAN. Branding, campaigns, content and video. Looking for a graduation internship.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Edna Palade — Portfolio">
@@ -826,7 +826,7 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 const LINKS = {
   email: "ednapalade05@gmail.com",
   linkedin: "https://www.linkedin.com/in/edna-palade/",
-  cv: ""                         // e.g. "files/edna-palade-cv.pdf"
+  cv: "files/Edna-Palade-CV.pdf"
 };
 const ME = { photo:"images/me.jpg" };          // e.g. "images/me.jpg"
 
@@ -1547,7 +1547,7 @@ $("#places").addEventListener("click", e => { const b = e.target.closest("[data-
 /* ---------- contact ---------- */
 $$("[data-link]").forEach(a => { const k = a.dataset.link, v = LINKS[k];
   if(k === "email"){ a.href = "mailto:" + v; a.innerHTML = v.replace("@", "@<wbr>"); } // only ever breaks after the @
-  else if(k === "cv"){ if(v){ a.href = v; a.setAttribute("download", ""); } else a.addEventListener("click", e => e.preventDefault()); }
+  else if(k === "cv"){ if(v){ a.href = v; a.target = "_blank"; a.rel = "noopener"; a.setAttribute("download", "Edna-Palade-CV.pdf"); } else a.addEventListener("click", e => e.preventDefault()); }
   else a.href = v; });
 $("#copy").addEventListener("click", async e => {
   const b = e.currentTarget; let ok = true;
