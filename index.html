@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Edna Palade - Portfolio</title>
-<meta name="description" content="Edna Palade, Communication Studies student at HAN Arnhem. Brands, campaigns, content and visual design.">
+<title>EP - Portfolio</title>
+<meta name="description" content="Edna Palade, Communication Studies student at HAN. Branding, campaigns, content and video. Looking for a graduation internship.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Edna Palade — Portfolio">
+<meta property="og:description" content="Communication Studies student at HAN. Branding, campaigns, content and video.">
+<meta property="og:url" content="https://portfolio.epalade.eu/">
+<meta property="og:image" content="https://portfolio.epalade.eu/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="canonical" href="https://portfolio.epalade.eu/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141019">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -241,12 +252,14 @@ p{text-wrap:pretty}
 .case.soon h3{font-size:clamp(1.5rem,2.6vw,2.2rem);color:#fff}
 .case .art:has(img)::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(10,6,16,.78))}
 .study-sub{margin:8px 0 14px}
+.study .content > p + p{margin-top:14px}
 .mag.mag-live{aspect-ratio:4/3;background:#1c1426}
 .mag-live iframe{width:100%;height:100%;border:0;opacity:0;transition:opacity .5s}
 .mag-live iframe.in{opacity:1}
 .mag img{width:100%;height:100%;object-fit:cover;display:block}
 .gallery{columns:2;column-gap:12px;margin:8px 0 28px}
 .gallery figure{break-inside:avoid;margin:0 0 14px}
+.gallery figure.wide{column-span:all}
 .gallery .shot{display:block;width:100%;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.06);cursor:zoom-in}
 .gallery img{display:block;width:100%;height:auto;transition:transform .5s var(--ease)}
 .gallery .shot:hover img{transform:scale(1.03)}
@@ -309,8 +322,10 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 .chip{border-radius:999px;padding:8px 16px;font-family:var(--h);font-weight:500;font-size:.88rem;background:rgba(255,255,255,.09);color:var(--white);transition:background .2s,color .2s}
 .chip[aria-pressed="true"]{background:var(--pink);color:var(--white)}
 .chip.shuf{background:var(--white);color:var(--ink)}
-.outro{position:relative;isolation:isolate;text-align:center;display:grid;justify-items:center;gap:14px;padding:clamp(48px,5vw,80px) 0 clamp(16px,2vw,32px)}
+.outro{position:relative;isolation:isolate;text-align:center;display:grid;justify-items:center;gap:14px;padding:clamp(96px,10vw,150px) 0 clamp(40px,4vw,64px)}
 .outro .glow{z-index:-1}
+.outro .h2,.outro .serif,.outro .btns{position:relative;z-index:1}
+.outro-dots{position:absolute;left:0;bottom:0;width:100%;height:clamp(300px,34vw,440px);z-index:1;pointer-events:auto;-webkit-mask-image:linear-gradient(to top,#000 70%,transparent);mask-image:linear-gradient(to top,#000 70%,transparent)}
 .sheets.stacked #wall > .pad{padding-bottom:clamp(24px,3vw,40px)}
 .outro .h2{font-size:clamp(2.4rem,5.5vw,4.6rem)}
 .outro .serif{color:var(--blush);margin-bottom:14px}
@@ -344,7 +359,7 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,60px);background:rgba(12,8,20,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(255,255,255,.06),0 30px 60px -30px rgba(0,0,0,.6);border-radius:28px;padding:clamp(24px,4vw,44px);position:relative}
 .feature .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
 .feature .tags span{border-radius:999px;padding:6px 14px;font-family:var(--h);font-weight:500;font-size:.85rem;background:var(--chip)}
-.feature .tags span.k{background:var(--pink);color:var(--white)}
+
 .feature p{color:var(--muted);max-width:50ch}
 .did{list-style:none;display:grid;gap:12px;margin-top:20px}
 .did li{display:grid;grid-template-columns:24px 1fr;gap:8px}
@@ -463,10 +478,14 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 .cc-r{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-width:0}
 .cc-mark{align-self:flex-end;flex:none;width:clamp(56px,5.5vw,76px);aspect-ratio:1;color:#fff;opacity:.95}
 .cc-mark svg{width:100%;height:100%;display:block}
+.say-w{white-space:nowrap;position:relative}
+.say-w::after{content:"";display:inline-block;width:.06em;height:.78em;margin-left:.04em;background:currentColor;vertical-align:baseline;opacity:0;transition:opacity .25s}
+.say-w.typing::after{opacity:1}
+@keyframes caret{50%{opacity:0}}
 .contact-card .say{font-size:clamp(3.2rem,7.6vw,7rem);line-height:.88}
 .cc-rows{border-bottom:1px solid rgba(255,255,255,.4)}
 .cc-row{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:12px;padding:18px 0;border-top:1px solid rgba(255,255,255,.4)}
-.cc-row .k{font-family:var(--h);font-weight:500;font-size:.85rem;color:rgba(255,255,255,.8)}
+.cc-row .k{font-family:var(--h);font-weight:500;font-size:.85rem;color:#fff}
 .cc-row .v{font-family:var(--h);font-weight:700;font-size:clamp(1rem,1.45vw,1.25rem);text-decoration:none;overflow-wrap:normal;justify-self:start;background:linear-gradient(#fff,#fff) left bottom/0 2px no-repeat;transition:background-size .35s var(--ease)}
 .cc-row .v:hover{background-size:100% 2px}
 .cc-act.ok{background:#fff;color:var(--pink)}
@@ -475,7 +494,7 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 .cc-act{transition:background .25s,color .25s;font-family:var(--h);font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px}
 @media (max-width:860px){.contact-card{grid-template-columns:1fr}.cc-mark{width:48px}}
 .say{font-size:clamp(3.2rem,9vw,8.4rem)}
-.contact-card .serif{margin:24px 0 0;color:rgba(255,255,255,.92);max-width:26ch}
+.contact-card .serif{margin:24px 0 0;color:#fff;max-width:26ch}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .mail a{font-family:var(--h);font-weight:700;font-size:clamp(1.4rem,3.6vw,2.6rem);letter-spacing:-.02em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;overflow-wrap:anywhere}
 .contact-card .btn.ghost{color:var(--white)}
@@ -531,6 +550,14 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 .bi-tools > span{display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;background:rgba(255,255,255,.06);font-family:var(--h);font-weight:500;font-size:.82rem}
 .bi-work button{padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--tc) 22%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tc) 50%,transparent);color:#fff;font-family:var(--h);font-weight:600;font-size:.8rem;transition:background .2s}
 .bi-work button:hover{background:color-mix(in srgb,var(--tc) 40%,transparent)}
+/* same style as the "Next project" button between projects */
+.bi-go{width:100%;margin-top:auto;border-radius:18px;padding:14px 18px;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  background:var(--tc);color:#141019;transition:transform .3s var(--ease),filter .2s}
+.bi-go:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.brain-info .bi-go small{display:block;font-family:var(--h);font-weight:600;font-size:.78rem;color:#141019;opacity:.7}
+.brain-info .bi-go strong{font-family:var(--h);font-weight:800;font-size:1.5rem;letter-spacing:-.03em;line-height:1.05}
+.bi-go svg{width:30px;height:30px;flex:none;transition:transform .3s var(--ease)}
+.bi-go:hover svg{transform:translateX(4px)}
 .brain-info .bi-learn{font-size:.88rem;color:#fff}
 .bnode:hover,.bnode[aria-pressed="true"]{transform:translate(-50%,-50%) scale(1.07);border-color:var(--tc);background:color-mix(in srgb,var(--tc) 18%,rgba(20,14,32,.9))}
 .brain-info{border-radius:24px;padding:24px;background:rgba(12,8,20,.55);border:1px solid rgba(255,255,255,.08);min-height:230px;display:flex;flex-direction:column;gap:10px}
@@ -598,6 +625,24 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
   #hello .hero-grid,.about,.feature,.journey{grid-template-columns:1fr}
   .intro{min-height:100dvh;padding-top:96px}
   .tabbar{width:auto;left:12px;right:12px;max-width:none}
+}
+/* phones: everything a touch smaller, and the menu becomes one bar that fits the screen */
+@media (max-width:600px){
+  html{font-size:14.5px}
+  .sheets.stacked .sheet:not(#hello) > .pad{padding-top:72px}
+  .tabbar{top:10px;left:8px;right:8px;gap:0;padding:4px;justify-content:space-between;overflow:visible;border-radius:18px;
+    background:rgba(20,14,32,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 0 1px rgba(255,255,255,.09),0 10px 24px -12px rgba(0,0,0,.6)}
+  .tabbar .tab{padding:9px clamp(3px,1.5vw,8px);font-size:clamp(.66rem,2.9vw,.78rem);background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-radius:13px;gap:0}
+  .tabbar .tab::before{display:none}
+  .tabbar .tab[aria-selected="true"]{background:color-mix(in srgb,var(--a) 30%,transparent);color:#fff}
+  .tabbar .brand{width:34px;height:34px;margin-right:0;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .intro .name{font-size:17vw}
+  .cc-row{grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;padding:14px 0}
+  .cc-row .k{grid-column:1/-1}
+  .cc-row .v{font-size:clamp(.85rem,3.9vw,1.05rem);white-space:nowrap}
+  .cc-act{padding:7px 12px}
+}
+@media (max-width:860px){
   .intro .name .ln{display:block}
   .intro .eyebrow{font-size:.82rem}
   .intro .name{font-size:19vw}
@@ -606,6 +651,8 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
   .me-card .back .note{font-size:1.05rem;line-height:26px;margin-top:10px}
   .me-card .back .sig span{font-size:1.3rem}
   .cases{grid-template-columns:1fr;grid-auto-rows:250px}
+  .cases .case,.cases .case.soon{grid-column:1/-1;grid-row:auto}
+  .cases .case.soon{height:150px}
   .case{grid-column:auto;grid-row:auto}
   .row{grid-template-columns:1fr}
   .wall{height:auto!important;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
@@ -632,8 +679,8 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
         <div class="intro-c" id="introC">
           <span class="intro-mark" data-logo aria-hidden="true"></span>
           <h1 class="display name" aria-label="Edna Palade"><span class="ln">Edna</span> <span class="ln">Palade</span></h1>
-          <p class="serif">brands, campaigns and content people actually remember</p>
-          <div class="btns"><button class="btn" data-go="projects">See my projects</button><button class="btn ghost" data-go="wall">Go to the wall</button></div>
+          <p class="serif">creative work, made with care</p>
+          <div class="btns"><button class="btn" data-go="projects">See my projects</button><button class="btn ghost" data-go="contact">Get in touch</button></div>
         </div>
         <button class="scroll-cue" id="scrollCue"><span>scroll to get to know me</span><i aria-hidden="true"><b></b></i></button>
       </header>
@@ -658,11 +705,12 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
 
     <!-- CONTACT -->
     <section class="sheet on-dark" id="contact" role="tabpanel">
+      <canvas class="outro-dots" id="outroDots" aria-hidden="true"></canvas>
       <div class="pad">
         <div class="contact-card" id="contactBlock">
           <div class="cc-l">
-            <h2 class="display say">Let's<br>Connect!</h2>
-            <p class="serif">open to brand, campaign and content roles, or just a good chat</p>
+            <h2 class="display say" aria-label="Let's connect!"><span aria-hidden="true">Let's<br><span class="say-w" id="sayWord">Connect!</span></span></h2>
+            <p class="serif">looking for a graduation internship in communication and marketing, or just a good chat</p>
           </div>
           <div class="cc-r">
           <span class="cc-mark" data-logo aria-hidden="true"></span>
@@ -672,6 +720,13 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
             <div class="cc-row"><span class="k">cv</span><a class="v" data-link="cv" href="#">Download my CV</a><span></span></div>
           </div>
           </div>
+        </div>
+        <div class="outro">
+          <span class="glow" style="width:460px;height:380px;background:#7B3FF2;left:8%;top:-25%;opacity:.18" aria-hidden="true"></span>
+          <span class="glow" style="width:460px;height:380px;background:#FF3E9A;right:8%;top:-25%;opacity:.18" aria-hidden="true"></span>
+          <h2 class="h2">Thanks for stopping by.</h2>
+          <p class="serif">you made it all the way to the bottom</p>
+          <div class="btns"><button class="btn ghost" data-go="hello">Back to the top</button></div>
         </div>
       </div>
     </section>
@@ -685,20 +740,13 @@ img.lz{opacity:0;transition:opacity .5s ease}img.lz.in{opacity:1}
     </section>
 
     <!-- WALL -->
-    <section class="sheet on-dark" id="wall" role="tabpanel">
+    <section class="sheet on-dark" id="wall" role="tabpanel" hidden style="display:none">
       <div class="pad">
         <div class="head">
           <div><h2 class="h2">The wall</h2><p class="serif" style="margin-top:10px">bonus round: my photos and pieces, for anyone who wants to see more</p></div>
           <div class="filters" role="group" aria-label="Filter the wall"></div>
         </div>
         <div class="wall" id="wallEl"></div>
-        <div class="outro">
-          <span class="glow" style="width:460px;height:380px;background:#7B3FF2;left:8%;top:-25%;opacity:.18" aria-hidden="true"></span>
-          <span class="glow" style="width:460px;height:380px;background:#FF3E9A;right:8%;top:-25%;opacity:.18" aria-hidden="true"></span>
-          <h2 class="h2">Thanks for stopping by.</h2>
-          <p class="serif">you made it all the way to the bottom, so let's talk</p>
-          <div class="btns"><button class="btn" data-go="contact">Get in touch</button><button class="btn ghost" data-go="hello">Back to the top</button></div>
-        </div>
       </div>
     </section>
 
@@ -780,7 +828,7 @@ const LINKS = {
   linkedin: "https://www.linkedin.com/in/edna-palade/",
   cv: ""                         // e.g. "files/edna-palade-cv.pdf"
 };
-const ME = { photo:"" };          // e.g. "images/me.jpg"
+const ME = { photo:"images/me.jpg" };          // e.g. "images/me.jpg"
 
 // What's written on the back of your photo on the first tab
 const BACK_NOTE = "Hi, I'm <b>Edna</b>. I study Communication Studies at HAN and I make brands, campaigns and content. I'm the one who notices when the font is slightly off.";
@@ -798,7 +846,7 @@ const JOURNEY = [
    theme:"My second home",
    desc:"Moving abroad on my own, I grew up here in a different sense. It taught me independence fast, and the Netherlands won me over with its good design and how international it is.",
    skills:["Brand strategy","Campaign planning","Research","Public relations"],
-   courses:["Integrated Marketing Communication","Marketing Communication and Branding","Media Production, Design and Branding","Consumer Behaviour & Trend Watching","Digital Marketing","Communication in International Marketing","Public Relations","Internal Communication"]},
+   courses:["Integrated Marketing Communication","Media Production, Design and Branding","Consumer Behaviour & Trend Watching","Digital Marketing","Communication in International Marketing","Public Relations","Internal Communication"]},
   {city:"Utrecht", country:"Netherlands", lat:52.09, lon:5.12, side:-1, below:true,
    school:"Channext", what:"Marketing internship",
    theme:"My first international team",
@@ -830,11 +878,67 @@ const VISITED = [
   {city:"London", country:"United Kingdom", lat:51.51, lon:-0.13}
 ];
 // Ideas the "Where to next?" button picks from
-const NEXT_PLACES = [
-  {city:"Madrid", lat:40.42, lon:-3.70}, {city:"Copenhagen", lat:55.68, lon:12.57},
-  {city:"Berlin", lat:52.52, lon:13.40}, {city:"Milan", lat:45.46, lon:9.19}, {city:"Vienna", lat:48.21, lon:16.37},
-  {city:"New York", lat:40.71, lon:-74.0}, {city:"Tokyo", lat:35.68, lon:139.69}, {city:"Dubai", lat:25.20, lon:55.27},
-  {city:"Stockholm", lat:59.33, lon:18.07}, {city:"Seoul", lat:37.57, lon:126.98}, {city:"Zurich", lat:47.38, lon:8.54}
+const NEXT_PLACES = [ // ideas the "Somewhere new" stop picks from, spread over every continent
+  {city:"Madrid", lat:40.42, lon:-3.7},
+  {city:"Copenhagen", lat:55.68, lon:12.57},
+  {city:"Berlin", lat:52.52, lon:13.4},
+  {city:"Milan", lat:45.46, lon:9.19},
+  {city:"Vienna", lat:48.21, lon:16.37},
+  {city:"Stockholm", lat:59.33, lon:18.07},
+  {city:"Zurich", lat:47.38, lon:8.54},
+  {city:"Oslo", lat:59.91, lon:10.75},
+  {city:"Helsinki", lat:60.17, lon:24.94},
+  {city:"Athens", lat:37.98, lon:23.73},
+  {city:"Istanbul", lat:41.01, lon:28.98},
+  {city:"Budapest", lat:47.5, lon:19.04},
+  {city:"Warsaw", lat:52.23, lon:21.01},
+  {city:"Brussels", lat:50.85, lon:4.35},
+  {city:"Reykjavík", lat:64.15, lon:-21.94},
+  {city:"Cape Town", lat:-33.92, lon:18.42},
+  {city:"Lagos", lat:6.52, lon:3.38},
+  {city:"Nairobi", lat:-1.29, lon:36.82},
+  {city:"Marrakech", lat:31.63, lon:-8.01},
+  {city:"Cairo", lat:30.04, lon:31.24},
+  {city:"Accra", lat:5.6, lon:-0.19},
+  {city:"Kigali", lat:-1.95, lon:30.06},
+  {city:"Dakar", lat:14.72, lon:-17.47},
+  {city:"Johannesburg", lat:-26.2, lon:28.05},
+  {city:"Tunis", lat:36.81, lon:10.18},
+  {city:"São Paulo", lat:-23.55, lon:-46.63},
+  {city:"Buenos Aires", lat:-34.6, lon:-58.38},
+  {city:"Mexico City", lat:19.43, lon:-99.13},
+  {city:"Bogotá", lat:4.71, lon:-74.07},
+  {city:"Lima", lat:-12.05, lon:-77.04},
+  {city:"Santiago", lat:-33.45, lon:-70.67},
+  {city:"Rio de Janeiro", lat:-22.91, lon:-43.17},
+  {city:"Medellín", lat:6.24, lon:-75.58},
+  {city:"Montevideo", lat:-34.9, lon:-56.16},
+  {city:"Havana", lat:23.11, lon:-82.37},
+  {city:"New York", lat:40.71, lon:-74.0},
+  {city:"Toronto", lat:43.65, lon:-79.38},
+  {city:"Montréal", lat:45.5, lon:-73.57},
+  {city:"Los Angeles", lat:34.05, lon:-118.24},
+  {city:"Vancouver", lat:49.28, lon:-123.12},
+  {city:"Chicago", lat:41.88, lon:-87.63},
+  {city:"Tokyo", lat:35.68, lon:139.69},
+  {city:"Seoul", lat:37.57, lon:126.98},
+  {city:"Singapore", lat:1.35, lon:103.82},
+  {city:"Bangkok", lat:13.76, lon:100.5},
+  {city:"Mumbai", lat:19.08, lon:72.88},
+  {city:"Bali", lat:-8.41, lon:115.19},
+  {city:"Hong Kong", lat:22.32, lon:114.17},
+  {city:"Taipei", lat:25.03, lon:121.57},
+  {city:"Ho Chi Minh City", lat:10.82, lon:106.63},
+  {city:"Kuala Lumpur", lat:3.14, lon:101.69},
+  {city:"Dubai", lat:25.2, lon:55.27},
+  {city:"Doha", lat:25.29, lon:51.53},
+  {city:"Shanghai", lat:31.23, lon:121.47},
+  {city:"Manila", lat:14.6, lon:120.98},
+  {city:"Kathmandu", lat:27.72, lon:85.32},
+  {city:"Sydney", lat:-33.87, lon:151.21},
+  {city:"Melbourne", lat:-37.81, lon:144.96},
+  {city:"Auckland", lat:-36.85, lon:174.76},
+  {city:"Wellington", lat:-41.29, lon:174.78}
 ];
 
 const CHANNEXT = {
@@ -851,7 +955,7 @@ const CHANNEXT = {
   photos:[
     {img:"images/channext-thumbnail.jpg", cap:"Episode thumbnail I designed", c:"wide", pos:"0% 50%"},
     {img:"images/channext-team.jpg", cap:"The team", pos:"52% 45%"},
-    {img:"images/channext-office.jpg", cap:"The Channext office in Utrecht", c:"wide", pos:"50% 62%"},
+    {img:"images/channext-office.jpg", cap:"Me at the Channext office", c:"wide", pos:"50% 62%"},
     {img:"images/channext-editing.jpg", cap:"Editing an episode", pos:"70% 40%"},
     {img:"images/channext-farewell.jpg", cap:"My farewell card", c:"tall"}
   ]
@@ -860,10 +964,11 @@ const CHANNEXT = {
 const PROJECTS = [
   {id:"gezel", title:"Gezel", kind:"App + brand", color:"#C9A7FF", fg:"#141019", scene:"lilac", w:4, h:2,
    sub:"help for people who are sick and living alone",
-   text:"An on-demand app that connects people who are sick and living alone with vetted local helpers. In a team of six, we went from mood board and mind map to naming, brand identity, an app prototype and a video ad for the final pitch.",
+   text:"An on-demand app that connects people who are sick and living alone with vetted local helpers. In a team, we went from mood board and mind map to naming, brand identity, an app prototype and a video ad for the final pitch.",
    meta:{Team:"6 students, HAN", "My part":"Naming, brand, prototype, ad", Tools:"Figma, Adobe CC, Canva"},
    video:"media/gezel-ad.mp4", poster:"images/gezel-ad-poster.jpg", cover:"images/gezel-logo.jpg",
    gallery:[
+     {img:"images/gezel-app-flow.jpg", cap:"The app, from request to rating", wide:true},
      {img:"images/gezel-logo.jpg", cap:"Logo and tagline"},
      {img:"images/gezel-product.jpg", cap:"The product"},
      {img:"images/gezel-safety.jpg", cap:"Trust and safety"},
@@ -888,10 +993,10 @@ const PROJECTS = [
      {img:"images/foodx-invitation.jpg", cap:"Partner invitation"},
      {img:"images/foodx-infographic.jpg", cap:"Match infographic"}
    ]},
-  {id:"connect", title:"Connect", kind:"IC strategy", color:"#FFC8E1", fg:"#141019", scene:"blush", w:4, h:1,
-   sub:"an internal communication campaign",
-   text:"An internal communication campaign I developed in a strategy whitepaper, then presented in an advice meeting. <span class='todo'>[One line on the idea.]</span>",
-   meta:{Type:"Individual strategy", Output:"Whitepaper, advice meeting"}}
+  {id:"connect", title:"Connect", kind:"IC Whitepaper", color:"#9B6BFF", fg:"#FFFFFF", scene:"blush", w:4, h:1, cover:"images/connect-cover.jpg", panelImg:"images/connect-logo.jpg",
+   sub:"different lenses, same direction",
+   text:"An internal communication (IC) whitepaper and advice presentation I made for a course at HAN. I built it on interviews I did during my internship and on an analysis of current trends in internal communication. The campaign looks at how a growing company keeps its teams aligned: breaking down silos between departments, making strategy something people are told rather than left to pick up, and giving employees a safe, two-way way to ask questions. It covers the whole journey, from research and concept to a six-month rollout with measurable goals.</p><p>I also designed the campaign's logo: a compass whose four icons stand for the company's values, with one needle pointing the way.",
+   meta:{}}
 ];
 
 // The wall: your work pieces AND your photos. tag: Work, Nature, Travel or Food
@@ -902,7 +1007,7 @@ const WALL = [
   {title:"FoodX campaign", tag:"Work", project:"foodx", img:"images/foodx-merch.jpg", ar:"16/9", w:300},
   {title:"Sunday brunch", tag:"Food", scene:"food", ar:"1/1", w:210},
   {title:"Partnerships Unraveled", tag:"Work", img:"images/channext-thumbnail.jpg", ar:"16/9", w:300, desc:"A podcast thumbnail from my internship."},
-  {title:"Editing the podcast", tag:"Work", img:"images/channext-editing.jpg", ar:"4/3", w:280, desc:"Editing an episode at Channext."},
+  {title:"Editing the podcast", tag:"Work", img:"images/channext-editing.jpg", ar:"4/3", w:280, desc:"Editing a podcast episode during my internship."},
   {title:"golden hour", tag:"Nature", scene:"sunset", ar:"3/2", w:270},
   {title:"Beneath The Surface", tag:"Work", project:"ewdr", img:"images/ewdr-marine-life.jpg", ar:"16/9", w:300},
   {title:"Ljubljana", tag:"Travel", scene:"city", ar:"4/5", w:215},
@@ -915,33 +1020,33 @@ const WALL = [
 // Skills: each one sits on the brain with the tools I use for it underneath
 const TOOL = {
   pr:"Premiere Pro", cc:"CapCut", op:"OpusClip", ae:"After Effects", ps:"Photoshop", ca:"Canva",
-  fg:"Figma", ai:"Illustrator", id:"InDesign", py:"Python"
+  fg:"Figma", ai:"Illustrator", id:"InDesign", py:"Python", sp:"SPSS"
 };
-const ABBR = {pr:"Pr", cc:"Cc", op:"Op", ae:"Ae", ps:"Ps", ca:"Ca", fg:"Fg", ai:"Ai", id:"Id", py:"Py"};
+const ABBR = {pr:"Pr", cc:"Cc", op:"Op", ae:"Ae", ps:"Ps", ca:"Ca", fg:"Fg", ai:"Ai", id:"Id", py:"Py", sp:"Sp"};
 const SKILLS = [
   {name:"Video editing", c:"#FF3E9A", tools:["pr","cc","op","ae"],
-   what:"Short-form video from rough footage to the final cut: ads, social clips and a bit of motion.",
-   work:[["Gezel ad","gezel"],["FoodX video","foodx"],["Channext videos","experience"]]},
-  {name:"Content creation", c:"#FF8CC6", tools:["ps","ca"],
-   what:"Social posts, visuals and podcast content that look on-brand and go out on time.",
-   work:[["Channext social and podcast","experience"],["FoodX emails and merch","foodx"]]},
+   what:"Podcast episodes, short-form clips and company videos, from raw footage to the final cut.",
+   see:["Channext","channext"]},
+  {name:"Social media content", c:"#FF8CC6", tools:["ca","ps"],
+   what:"Posts, thumbnails and newsletters for LinkedIn and YouTube, made on-brand and scheduled to go out on time.",
+   see:["Channext","channext"]},
   {name:"UX/UI design", c:"#FFC8E1", tools:["fg"],
-   what:"App flows and clickable prototypes, designed around the person who will use them.",
-   work:[["Gezel app","gezel"]]},
+   what:"App flows and a clickable prototype, designed around the person who will use them.",
+   see:["Gezel","gezel"]},
   {name:"Branding", c:"#9B6BFF", tools:["ai","fg","ps"],
-   what:"Names, logos and visual identities, from the mood board to a full brand system.",
-   work:[["Gezel brand","gezel"],["FoodX campaign look","foodx"]], learned:["Marketing Communication and Branding","Media Production, Design and Branding"]},
+   what:"Naming, a logo and a full visual identity, from the mood board to the brand system.",
+   see:["Gezel","gezel"], learned:["Marketing Communication and Branding","Media Production, Design and Branding"]},
   {name:"Editorial design", c:"#C9A7FF", tools:["id"],
-   what:"Magazine layouts that are made to be read and flipped through.",
-   work:[["Beneath The Surface","ewdr"]]},
+   what:"An interactive digital magazine: the concept, the layout and the technical build.",
+   see:["EWDR","ewdr"]},
   {name:"Campaign strategy", c:"#F25CC0", tools:["ca"],
-   what:"Turning an insight into a campaign idea, then pitching it.",
-   work:[["FoodX, 1st place","foodx"],["Gezel pitch","gezel"]], learned:["Integrated Marketing Communication","Consumer Behaviour & Trend Watching"]},
+   what:"Turning an insight into a campaign idea and pitching it. Our B2B concept for FoodX won first place.",
+   see:["FoodX","foodx"], learned:["Integrated Marketing Communication","Consumer Behaviour & Trend Watching"]},
   {name:"PR", c:"#B794FF", tools:[],
-   what:"Internal and external communication that people actually read and act on.",
-   work:[["Connect","connect"],["Channext internal comms","experience"]], learned:["Public Relations","Internal Communication"]},
-  {name:"Research and data", c:"#8B5CFF", tools:["py"],
-   what:"Research that backs up the idea, and data analysis in Python when the numbers matter.",
+   what:"Handling the contact with podcast guests during my internship, from the first invitation to release updates and feedback.",
+   see:["Channext","channext"], learned:["Public Relations","Internal Communication"]},
+  {name:"Research and data", c:"#8B5CFF", tools:["sp","py"],
+   what:"Research for my graduation thesis, field research, sentiment analysis, and data analysis in SPSS and Python, like comparing Airbnb listings across five cities.",
    learned:["Introduction to Python","Business Research"]}
 ];
 
@@ -1038,7 +1143,7 @@ SHEETS.forEach((s, i) => {
     $(".pad", sec).appendChild(nb);
   }
 });
-$("#tab-hello").remove(); $("#tab-journey").remove();
+$("#tab-hello").remove(); $("#tab-journey").remove(); $("#tab-wall") && $("#tab-wall").remove(); // the wall is hidden for now
 const tabs = $$(".tab");
 // menu dots: one smooth shade per item, from violet to hot pink
 ["#8B5CFF","#A86CFF","#C47AF7","#DD79DF","#F25CC0","#FF3E9A"].forEach((c, i) => tabs[i] && tabs[i].style.setProperty("--a", c));
@@ -1075,6 +1180,7 @@ function glideTo(top){
 const offsetIn = el => { const box = $(".sheets"); return el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop; };
 function show(id){
   if(id === "work") id = "projects";
+  if(id === "wall") id = "hello"; // the wall is hidden for now, so old #wall links open at the top
   NAV_LOCK = performance.now() + 1400; $(".tabbar").classList.remove("away");
   const was = showMain(), sheetsEl = $(".sheets"), smooth = was && !reduced ? "smooth" : "auto";
   let el = null;
@@ -1148,7 +1254,7 @@ function openStudy(id, from){
   const i = PROJECTS.findIndex(p => p.id === id), p = PROJECTS[i], n = PROJECTS[(i + 1) % PROJECTS.length];
   if(from) backFocus = from;
   panel.style.cssText = `--pc:${p.color};--pf:${p.fg};--nc:${n.color};--nf:${n.fg}`;
-  const media = p.magazine ? `<div class="mag mag-live is-loading"><iframe onload="this.classList.add('in');this.parentNode.classList.remove('is-loading')" src="${p.magazine}" title="${p.title} magazine" allowfullscreen loading="lazy"></iframe></div>`
+  const media = p.panelImg ? `<div class="mag"><img src="${p.panelImg}" alt="${p.title} campaign logo"></div>` : p.magazine ? `<div class="mag mag-live is-loading"><iframe onload="this.classList.add('in');this.parentNode.classList.remove('is-loading')" src="${p.magazine}" title="${p.title} magazine" allowfullscreen loading="lazy"></iframe></div>`
     : p.magazine !== undefined ? `<div class="mag">${p.cover ? `<img src="${p.cover}" alt="EWDR cover">` : scene("spread")}</div>`
     : p.video !== undefined ? videoEmbed(p.video, p.scene, p.title + " video goes here", p.poster)
     : p.gallery ? "" // the card cover is only for the card; the gallery shows the real pieces
@@ -1163,8 +1269,8 @@ function openStudy(id, from){
       <p class="serif">${p.sub}</p>
       <p>${p.text}</p>
       ${media || cta ? `<div class="study-media">${media}${cta ? `<div class="btns">${cta}</div>` : ""}</div>` : ""}
-      ${p.gallery ? `<div class="gallery">${p.gallery.map(g => `<figure><button class="shot" data-zoom="${g.img}" aria-label="Open ${g.cap}"><img class="lz" src="${g.img}" alt="${p.title}: ${g.cap}" loading="lazy" onload="this.classList.add('in')"></button><figcaption>${g.cap}</figcaption></figure>`).join("")}</div>` : ""}
-      ${p.extraVideo ? `<h3 class="h3 study-sub">Campaign video</h3>${videoEmbed(p.extraVideo, p.scene, p.title + " campaign video")}` : ""}
+      ${p.extraVideo ? `<div class="study-media">${videoEmbed(p.extraVideo, p.scene, p.title + " campaign video")}</div>` : ""}
+      ${p.gallery ? `<div class="gallery">${p.gallery.map(g => `<figure class="${g.wide ? "wide" : ""}"><button class="shot" data-zoom="${g.img}" aria-label="Open ${g.cap}"><img class="lz" src="${g.img}" alt="${p.title}: ${g.cap}" loading="lazy" onload="this.classList.add('in')"></button><figcaption>${g.cap}</figcaption></figure>`).join("")}</div>` : ""}
       <button class="nextp" data-next="${n.id}"><span><small>Next project</small><strong>${n.title}</strong></span>${ARROW}</button>
     </div>`;
   study.classList.add("open"); panel.scrollTop = 0; $(".x", panel).focus();
@@ -1248,7 +1354,7 @@ lb.addEventListener("click", e => {
 /* ---------- experience ---------- */
 const cxShots = [ // the three photos in the little preview on the card
   {img:"images/channext-team.jpg", cap:"The team", pos:"52% 55%"},
-  {img:"images/channext-office.jpg", cap:"The Channext office in Utrecht", pos:"84% 55%"},
+  {img:"images/channext-office.jpg", cap:"Me at the Channext office", pos:"84% 55%"},
   {img:"images/channext-farewell.jpg", cap:"My farewell card", pos:"50% 30%"}];
 const cxMore = CHANNEXT.linkedin.length + CHANNEXT.extra.length + CHANNEXT.photos.filter(p => !p.img.includes("thumbnail")).length - 2;
 $("#channextMedia").innerHTML = videoEmbed(CHANNEXT.video, "purple", "Partnerships Unraveled episode") +
@@ -1263,7 +1369,7 @@ $("#channextMedia").addEventListener("click", e => {
 function openChannext(from){
   if(from) backFocus = from;
   panel.style.cssText = "--pc:#FF3E9A;--pf:#FFFFFF";
-  const shots = [...CHANNEXT.extra, ...CHANNEXT.photos.filter(p => !p.img.includes("thumbnail"))];
+  const shots = CHANNEXT.photos.filter(p => !p.img.includes("thumbnail")).sort((a, b) => b.img.includes("office") - a.img.includes("office"));
   panel.innerHTML = `<div class="top"><button class="x" data-close aria-label="Close">${X}</button></div>
     <div class="content">
       <span class="pill">Marketing internship</span>
@@ -1273,8 +1379,8 @@ function openChannext(from){
       <p class="cap">An episode of <i>Partnerships Unraveled</i>, edited by me.</p>
       <div class="study-media">${videoEmbed(CHANNEXT.video, "purple", "Partnerships Unraveled episode")}
         <div class="btns"><a class="btn" href="${CHANNEXT.episode}" target="_blank" rel="noopener">Read the episode 213 recap</a></div></div>
-      <h3 class="h3 study-sub">Highlighted LinkedIn posts</h3>
-      <div class="li-posts">${CHANNEXT.linkedin.map((l, i) => `<div class="li-post is-loading"><iframe src="${l.src}" height="${l.h}" title="Channext LinkedIn post ${i + 1}" loading="lazy" allowfullscreen onload="this.classList.add('in');this.parentNode.classList.remove('is-loading')"></iframe></div>`).join("")}</div>
+      <h3 class="h3 study-sub">Content examples</h3>
+      <div class="li-posts">${CHANNEXT.linkedin.map((l, i) => `<div class="li-post is-loading"><iframe src="${l.src}" height="${l.h}" title="Channext LinkedIn post ${i + 1}" loading="lazy" allowfullscreen onload="this.classList.add('in');this.parentNode.classList.remove('is-loading')"></iframe></div>`).join("")}${CHANNEXT.extra.map(g => `<div class="li-post"><button class="shot" data-zoom="${g.img}" aria-label="Open ${g.cap}"><img src="${g.img}" alt="${g.cap}" style="display:block;width:100%"></button></div>`).join("")}</div>
       <h3 class="h3 study-sub">More from the internship</h3>
       <div class="gallery">${shots.map(g => `<figure><button class="shot" data-zoom="${g.img}" aria-label="Open ${g.cap}"><img class="lz" src="${g.img}" alt="${g.cap}" loading="lazy" onload="this.classList.add('in')"></button><figcaption>${g.cap}</figcaption></figure>`).join("")}</div>
     </div>`;
@@ -1329,14 +1435,13 @@ $("#cxOpen").addEventListener("click", e => openChannext(e.currentTarget));
   }
   const badge = k => `<span class="tb" title="${TOOL[k]}">${ABBR[k]}</span>`;
   nodesEl.innerHTML = SKILLS.map((t, i) => `<button class="bnode" data-t="${i}" style="--tc:${t.c}" aria-pressed="false"><span class="bn">${t.name}</span></button>`).join("");
-  const idle = `<b>${SKILLS.length} skills, one brain</b><p>Hover or tap a skill to see the tools behind it and where I've used it. Drag the brain to spin it.</p><div class="bi-sec idle-sec"><small>Also good at</small><div class="chips"><span>Storytelling</span><span>Copywriting</span><span>Presenting</span><span>Teamwork</span></div></div>`;
+  const idle = `<b>A peek inside my brain</b><p>Hover or tap a skill to see the tools behind it and where I've used it. Drag the brain to spin it.</p><div class="bi-sec idle-sec"><small>Also good at</small><div class="chips"><span>Storytelling</span><span>Copywriting</span><span>Presenting</span><span>Teamwork</span></div></div>`;
   function showInfo(i){
     if(i < 0){ info.style.removeProperty("--tc"); info.innerHTML = idle; return; }
     const t = SKILLS[i]; info.style.setProperty("--tc", t.c);
     info.innerHTML = `<b>${t.name}</b><p>${t.what}</p>
       ${t.tools.length ? `<div class="bi-sec"><small>Tools</small><div class="bi-tools">${t.tools.map(k => `<span>${badge(k)}${TOOL[k]}</span>`).join("")}</div></div>` : ""}
-      ${t.work ? `<div class="bi-sec"><small>See it in</small><div class="bi-work">${t.work.map(([l, to]) => `<button data-to="${to}">${l}</button>`).join("")}</div></div>` : ""}
-      ${t.learned ? `<div class="bi-sec"><small>Learned in</small><p class="bi-learn">${t.learned.join(", ")}</p></div>` : ""}`;
+      ${t.see ? `<button class="bi-go" data-to="${t.see[1]}"><span><small>See it in action</small><strong>${t.see[0]}</strong></span>${ARROW}</button>` : ""}`;
   }
   // size the panel for its longest skill once, so it never grows or jumps when you hover
   function sizePanel(){
@@ -1364,7 +1469,8 @@ $("#cxOpen").addEventListener("click", e => openChannext(e.currentTarget));
   nodesEl.addEventListener("focusin", e => { const b = e.target.closest(".bnode"); if(b && canHover && e.target.matches(":focus-visible")) enter(+b.dataset.t); });
   nodesEl.addEventListener("focusout", () => { if(canHover) leave(); });
   info.addEventListener("click", e => { const b = e.target.closest("[data-to]"); if(!b) return; const to = b.dataset.to;
-    if(PROJECTS.some(p => p.id === to)){ go("projects"); setTimeout(() => openStudy(to, b), 900); } else go(to); });
+    if(to === "channext"){ go("experience"); setTimeout(() => openChannext(b), 900); }
+    else if(PROJECTS.some(p => p.id === to)){ go("projects"); setTimeout(() => openStudy(to, b), 900); } else go(to); });
   // drag to spin, like the globe
   stage.addEventListener("pointerdown", e => {
     if(e.target.closest(".bnode")) return;
@@ -1426,6 +1532,16 @@ $("#places").innerHTML = JOURNEY.filter(j => j.courses).sort((a, b) => EDU_ORDER
   <div class="in"><div class="f"><div class="img">${pic(j, j.city)}</div>
     <div class="txt"><small>${j.city}, ${j.country}</small><b>${j.school}</b><span>${j.what}</span></div></div>
   <div class="bk"><small>Highlighted courses</small><b>${j.school}</b><p class="note">the ones that helped me most along the way</p><ul>${j.courses.map(c => `<li>${c}</li>`).join("")}</ul></div></div></button>`).join("");
+// every card is as tall as its longest course list, so nothing ever hides at the bottom
+function fitPlaces(){
+  const cards = $$("#places .place"); if(!cards.length) return;
+  cards.forEach(c => c.style.height = "");
+  const base = cards[0].offsetHeight;
+  const need = Math.max(base, ...cards.map(c => { const bk = $(".bk", c); bk.style.bottom = "auto"; const h = bk.offsetHeight + 4; bk.style.bottom = ""; return h; }));
+  cards.forEach(c => c.style.height = need + "px");
+}
+fitPlaces(); (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitPlaces);
+let fpT; addEventListener("resize", () => { clearTimeout(fpT); fpT = setTimeout(fitPlaces, 150); });
 $("#places").addEventListener("click", e => { const b = e.target.closest("[data-place]"); if(b) b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true"); });
 
 /* ---------- contact ---------- */
@@ -1528,7 +1644,7 @@ const LIGHTS = {about:[0,.22], journey:[0,0], experience:[.28,.22], projects:[.2
       });
     }
     // soft round dot clusters that sit on the edge and spill across the seam into this section
-    if(i > 0){
+    if(i > 0 && sh.id !== "journey"){
       const prev = SHEETS[i - 1], side = i % 2 ? "left" : "right", other = side === "left" ? "right" : "left";
       (sh.id === "about" ? [["right", 440, 120, .9], ["left", 300, 520, .7]] : [[side, 460, -230, 1], [other, 280, -120, .7]]).forEach(([pos, size, top, strength], k) => {
         const c = document.createElement("canvas"); c.className = "bloom"; c.setAttribute("aria-hidden", "true");
@@ -1596,11 +1712,23 @@ const LIGHTS = {about:[0,.22], journey:[0,0], experience:[.28,.22], projects:[.2
     const b = $("b", s), t = b.dataset.t, col = getComputedStyle(s).getPropertyValue("--sc").trim() || "#FF3E9A";
     const o = document.createElement("canvas").getContext("2d", {willReadFrequently:true});
     o.font = `700 ${F}px Poppins, sans-serif`;
-    const w = Math.ceil(o.measureText(t).width) + 2, h = Math.ceil(F * 1.12);
-    o.canvas.width = w; o.canvas.height = h; o.font = `700 ${F}px Poppins, sans-serif`; o.textBaseline = "middle"; o.fillText(t, 1, h / 2 + 1);
+    // "¡" is too small to read as dots, so draw a normal "!" there and flip it upside down below
+    const flipFirst = t[0] === "¡", txt = flipFirst ? "!" + t.slice(1) : t;
+    const w = Math.ceil(o.measureText(txt).width) + 2, h = Math.ceil(F * 1.12), firstW = flipFirst ? o.measureText("!").width : 0;
+    o.canvas.width = w; o.canvas.height = h; o.font = `700 ${F}px Poppins, sans-serif`; o.textBaseline = "middle"; o.fillText(txt, 1, h / 2 + 1);
     const d = o.getImageData(0, 0, w, h).data, cols = Math.floor(w / GAP), rows = Math.floor(h / GAP), lit = [];
     for(let cx = 0; cx < cols; cx++){ const c = []; for(let ry = 0; ry < rows; ry++){
       const x = (cx + .5) * GAP | 0, y = (ry + .5) * GAP | 0, a = d[(y * w + x) * 4 + 3] / 255; c.push(a > .35 ? .7 + .3 * a : 0); } lit.push(c); }
+    if(flipFirst){
+      // copy the closing "!" exactly (same width and dots), flipped upside down, into the opening "¡"
+      const on = c => c.some(v => v);
+      let e = cols - 1; while(e >= 0 && !on(lit[e])) e--; let es = e; while(es > 0 && on(lit[es - 1])) es--;
+      let fs = 0; while(fs < cols && !on(lit[fs])) fs++; let fe = fs; while(fe < cols - 1 && on(lit[fe + 1])) fe++;
+      let lo = rows, hi = -1; for(let cx = es; cx <= e; cx++) lit[cx].forEach((v, ry) => { if(v){ lo = Math.min(lo, ry); hi = Math.max(hi, ry); } });
+      for(let cx = fs; cx <= fe; cx++) lit[cx] = lit[cx].map(() => 0);
+      for(let k = 0; k <= e - es && fs + k < es; k++){ const src = lit[es + k], col = src.map(() => 0);
+        for(let ry = lo; ry <= hi; ry++) col[lo + hi - ry] = src[ry]; lit[fs + k] = col; }
+    }
     const dpr = Math.min(devicePixelRatio || 1, 2), cv = document.createElement("canvas");
     cv.width = cols * GAP * dpr; cv.height = rows * GAP * dpr; cv.style.width = cols * GAP + "px"; cv.style.height = rows * GAP + "px";
     const ctx = cv.getContext("2d"); ctx.scale(dpr, dpr); b.replaceChildren(cv);
@@ -1646,6 +1774,38 @@ const LIGHTS = {about:[0,.22], journey:[0,0], experience:[.28,.22], projects:[.2
     go();
   }, {threshold:.3}).observe($(".polaroid"));
   document.addEventListener("visibilitychange", go);
+})();
+
+/* ---------- Let's Connect! retypes itself, then always comes back to Connect ---------- */
+(() => {
+  const el = $("#sayWord"); if(!el || reduced) return;
+  const WORDS = ["Connect!", "Chat!", "Create!", "Team up!"];
+  let i = 0, visible = false, timer = null;
+  const wait = ms => new Promise(r => timer = setTimeout(r, ms));
+  async function loop(){
+    while(visible){
+      await wait(i === 0 ? 2200 : 1500); if(!visible) break;
+      el.classList.add("typing");
+      // delete and type with an easing rhythm: quick in the middle, softer at the ends
+      let t = WORDS[i], n = t.length;
+      for(let k = n; k > 0; k--){ t = t.slice(0, -1); el.textContent = t || "\u200b"; await wait(28 + 22 * Math.abs(k / n - .5) * 2); }
+      i = (i + 1) % WORDS.length; await wait(120);
+      const w = WORDS[i]; el.textContent = "";
+      for(let k = 0; k < w.length; k++){ el.textContent += w[k]; await wait(42 + 30 * Math.abs(k / (w.length - 1 || 1) - .5) * 2); }
+      await wait(250); el.classList.remove("typing");
+    }
+  }
+  new IntersectionObserver(([en]) => { const was = visible; visible = en.isIntersecting;
+    if(visible && !was){ loop(); }
+    if(!visible){ clearTimeout(timer); i = 0; el.textContent = WORDS[0]; el.classList.remove("typing"); } }, {threshold:.4}).observe(el);
+})();
+
+/* ---------- the closing dot field: a shorter echo of the intro, fading out towards the end ---------- */
+(() => {
+  const cv = $("#outroDots"); if(!cv) return;
+  DotField(cv, {color:"#C9A7FF", gap:24, base:.34, mode:"scatter",
+    // same falloff as the intro: an empty oval in the middle, dots gathering towards the bottom corners
+    mask:(x, y, W, H) => { const d = Math.hypot((x - W / 2) / (W * .5), (H * .1 - y) / (H * .95)); return Math.min(1, Math.max(0, (d - .62) / .5)); }});
 })();
 
 /* ---------- intro: dots live at the edges, fade out in the centre ---------- */
@@ -1839,13 +1999,14 @@ const LAND = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
   });
   function selectVisited(i){ vActive = vActive === i ? -1 : i; }
   // "Somewhere new": opens like the other stops, draws a line to a possible next city and explains what I'm looking for
-  let lastPick = -1;
+  let lastPick = -1, deck = [];
   function pickCity(){
-    let k; do { k = Math.floor(Math.random() * NEXT_PLACES.length); } while(k === lastPick && NEXT_PLACES.length > 1); lastPick = k;
+    if(!deck.length){ deck = NEXT_PLACES.map((_, i) => i).sort(() => Math.random() - .5); if(deck[0] === lastPick) deck.push(deck.shift()); }
+    const k = deck.shift(); lastPick = k;
     const place = NEXT_PLACES[k], home = JOURNEY[1];
     nextArc = {place, points:arcPoints(home, place, 60), t:0}; interacted = true; active = -1;
     const mid = nextArc.points[30]; flyTo(mid[0], mid[1]);
-    $("#nextMsg").innerHTML = `<p><b>${place.city}, maybe?</b> Next up is my graduation internship in branding, marketing or communication. The city is still open, so if your team feels like the right fit, I'd love to hear from you.</p>
+    $("#nextMsg").innerHTML = `<p><b>${place.city}, maybe?</b> Next up is my graduation internship in communication and marketing. The city is still open, so if your team feels like the right fit, I'd love to hear from you.</p>
       <div class="np-act"><button class="btn" data-next-contact>Let's talk</button><button class="np-again" data-next-again>Try another city</button></div>`;
   }
   function toggleNext(b){
